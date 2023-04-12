@@ -15,7 +15,7 @@ const DetailsMove = () => {
         `https://api.themoviedb.org/3/movie/${route.params.id}?api_key=a7e32237cd1022116e2ea2bbef3bcfb3&language=en-US`
       )
       .then(async (res) => {
-        // console.log(res.data)
+        console.log(res.data)
        await setDetails(res?.data);
        await axios
           .post(
@@ -23,31 +23,18 @@ const DetailsMove = () => {
             res?.data
           )
           .then(async (ress) => {
-            const token = (await Notifications.getDevicePushTokenAsync()).data;
-            // await fetch('https://fcm.googleapis.com/fcm/send', {
-            //   method: 'POST',
-            //   headers: {
-            //     'Content-Type': 'application/json',
-            //     Authorization: `key=AAAAb7MY0vM:APA91bG7PStnvjciV9BtAQD6w_szriClT_Gk4_1re0sLl1Fb0gCoXZulGZvYEW-_kGcBXqqLPYEfrXo1u5fIU7_255tJu08vAqstXsrN4Q7SJCVvr5xrvSpdp7OZf7U_wotJTgp6avdJ`,
-            //   },
-            //   body: JSON.stringify({
-            //     to: token,
-            //     priority: 'normal',
-            //     data: {
-            //       experienceId: "mostafahpater/appGainIo-app",
-            //       scopeKey: "mostafahpater/appGainIo-app",
-            //       title: "📧 You've got mail",
-            //       message: 'Hello world! 🌐',
-            //     },
-            //   }),
-            // }).then((res) => {
-            //   console.log(res)
-            //   console.log(true)
-            // }
-            // ).catch((err) => {
-            //   console.log("err")
-            // }
-            // )
+            const token = (await Notifications.getExpoPushTokenAsync()).data;
+            await fetch("https://exp.host/--/api/v2/push/send", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify({
+                to: token,
+                title: res?.data?.title,
+                body: res?.data?.overview,
+              }),
+            });
           });
       });
   }, []);
@@ -60,7 +47,7 @@ const DetailsMove = () => {
           uri: `https://www.themoviedb.org/t/p/w300_and_h450_bestv2${details?.backdrop_path}`,
         }}
       />
-      {details?.adult &&   <Text style={[styles.adults, { fontWeight: "600", fontSize: 16 }]}>
+      {details?.adult &&   <Text style={[styles.backGroundColorText, { fontWeight: "600", fontSize: 16 }]}>
           18+
         </Text>}
       <View
@@ -73,7 +60,7 @@ const DetailsMove = () => {
      
         <View
           style={[
-            styles.adults,
+            styles.backGroundColorText,
             { flexDirection: "row-reverse", alignItems: "center", margin: 10 },
           ]}
         >
@@ -98,7 +85,7 @@ const DetailsMove = () => {
 export default DetailsMove;
 
 const styles = StyleSheet.create({
-  adults: {
+  backGroundColorText: {
     padding: 3,
     borderRadius: 4,
     backgroundColor: "#a7a6a670",
@@ -109,6 +96,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     paddingVertical: 12,
     paddingHorizontal: 32,
+    marginBottom:15,
     borderRadius: 4,
     elevation: 1,
     width:200,

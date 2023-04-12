@@ -2,9 +2,34 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import Index from './Index';
 import { useEffect, useRef, useState } from 'react';
+import * as Linking from 'expo-linking';
 import * as Device from 'expo-device';
 import * as Notifications from 'expo-notifications';
 export default function App() {
+  // const [data, setData] = useState(null);
+
+  // function handleDeepLink(event){
+  //   // console.log("event",event)
+  //   let date =Linking.parse(event.url)
+  //   setData(date)
+  // }
+  // useEffect(() => {
+  //   async function getInitialURL() {
+  //     const initilaURL=await Linking.getInitialURL()
+  //     if (initilaURL) {
+  //       setData(Linking.parse(initilaURL))
+  //     }
+  //   }
+  //   Linking.addEventListener('url', handleDeepLink);
+  //   if (!data) {
+  //     getInitialURL()
+  //   }
+  //     return () => {
+  //       Linking.removeEventListener('url');
+  //     };
+    
+  // },[])
+  // console.log(data)
   Notifications.setNotificationHandler({
     handleNotification: async () => ({
       shouldShowAlert: true,
@@ -74,7 +99,8 @@ export default function App() {
 
       <>
       <StatusBar style="auto" />
-      <Index />
+     <Index /> 
+      
       </>
 
   

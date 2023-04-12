@@ -9,15 +9,15 @@ import AnimatedSplash from "react-native-animated-splash-screen";
 const Index = () => {
     const Stack = createNativeStackNavigator();
     // Linking Navigate
-    const prefix = Linking.createURL()
+    const prefix = Linking.createURL('movieapptask://')
     // Linking.openURL('https://expo.dev')
     const linking = {
-      prefixes: ['movieapptask://'],
+      prefixes: [prefix],
       config: {
         initialRouteName: 'movies',
         screens: {
-          movies:  'movies',
-          movename: 'movename/:Move_id',
+          movies:  'Movies',
+          movename: 'Movename/:Move_id',
           NotFound: '*',
         }
       }
@@ -38,9 +38,7 @@ const Index = () => {
     logoWidth={150}
   >
 
-<NavigationContainer linking={linking} 
- fallback={<ActivityIndicator color="blue" size="large" />}
->
+<NavigationContainer linking={linking}>
 <Stack.Navigator initialRouteName="movies"   screenOptions={{
   headerShown: false,
 }}>
