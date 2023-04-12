@@ -1,0 +1,56 @@
+{
+  "project_info": {
+    "project_number": "479746118387",
+    "firebase_url": "https://task-appgain-io-default-rtdb.firebaseio.com",
+    "project_id": "task-appgain-io",
+    "storage_bucket": "task-appgain-io.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:479746118387:android:1e38920f260aeda7321d86",
+        "android_client_info": {
+          "package_name": "Mostafa.AppGianIo.com"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "479746118387-4k92aouvj84u217tmkj1u67fm64ivi2s.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "Mostafa.AppGianIo.com",
+            "certificate_hash": "f4f6b979b8dd3c076307c79ea8fc389534bef207"
+          }
+        },
+        {
+          "client_id": "479746118387-ouqdaepuc7okusnkm2f42036of6rjed9.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "Mostafa.AppGianIo.com",
+            "certificate_hash": "beb1b2efbf62fae676447f433ad969d9841710f3"
+          }
+        },
+        {
+          "client_id": "479746118387-pjvr6go49p1mkg0cumkn586slan16rgn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBhWu7d4CDQb5t1ig-3xQIYakXeO4-cdP0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "479746118387-pjvr6go49p1mkg0cumkn586slan16rgn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
